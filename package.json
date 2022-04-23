@@ -1,0 +1,33 @@
+{
+  "name": "tugas-be---mini-project---food-order",
+  "version": "1.0.0",
+  "description": "> _⏰_ START : 21 APRIL 2022 || DEADLINE : 28 APRIL 2022 - 23.59.59 WIB",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "db-install": "sequelize-cli db:create && sequelize-cli db:migrate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanlyseptian/back-end-mini-project-Food-Order.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanlyseptian/back-end-mini-project-Food-Order/issues"
+  },
+  "homepage": "https://github.com/chanlyseptian/back-end-mini-project-Food-Order#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
+  }
+}
