@@ -10,16 +10,16 @@ class CustomerController {
             });
 
             // res.json(customers);
-            // res.render('customer/listCustomer.ejs', {customers})
-            res.render('customer/listCustomer.ejs')
+            res.render('customer/listCustomer.ejs', {customers})
+            // res.render('customer/listCustomer.ejs')
 
         } catch (err) {
             res.json(err);
         }
     }
     
-    static createCustomerPage() {
-
+    static createCustomerPage(req, res) {
+        res.render('customer/createCustomerPage.ejs');
     }
 
     static async create(req,res) {
@@ -28,7 +28,8 @@ class CustomerController {
             const customers = await customer.create({
                 name, key, phone, address, image
             })
-            res.json(customers);
+            // res.json(customers);
+            res.redirect('/customers');
         } 
         
         catch (err) {
@@ -43,9 +44,10 @@ class CustomerController {
                 where: {id}
             })
 
-            deleteCustomer === 1 ?
-            res.json(`Customer with id ${id} has been deleted`) :
-            res.json(`Something is wrong!`)
+            // deleteCustomer === 1 ?
+            // res.json(`Customer with id ${id} has been deleted`) :
+            // res.json(`Something is wrong!`)
+            res.redirect('/customers');
         }
 
         catch(err) {
@@ -53,7 +55,21 @@ class CustomerController {
         }
     }
 
-    static editCustomerPage(req, res) {
+    static async editCustomerPage(req, res) {
+        try {
+            const findCustomerid = req.params.id;
+            const infoCustomer = await customer.findOne({
+                where: {
+                    id: findCustomerid,
+                }
+            })
+            res.render('customer/editCustomerPage.ejs', {customer : infoCustomer});
+
+        }
+
+        catch (err) {
+            res.json(err);
+        }
 
     }
 
@@ -67,9 +83,10 @@ class CustomerController {
             }, {
                 where: {id}
             })
-            editCustomer[0] === 1 ? 
-            res.json(`Customer with id ${id} has been updated`) :
-            res.json(`Something is wrong!`)
+            // editCustomer[0] === 1 ? 
+            // res.json(`Customer with id ${id} has been updated`) :
+            // res.json(`Something is wrong!`)
+            res.redirect('/customers')
         }
 
         catch (err) {

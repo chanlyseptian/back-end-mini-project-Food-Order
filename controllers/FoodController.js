@@ -10,8 +10,8 @@ class FoodController {
             });
 
             // res.json(foods);
-            // res.render('food/listFood.ejs', {foods})
-            res.render('food/listFood.ejs')
+            res.render('food/listFood.ejs', {foods})
+            // res.render('food/listFood.ejs')
 
 
         } catch (err) {
@@ -19,7 +19,8 @@ class FoodController {
         }
     }
     
-    static createFoodPage() {
+    static createFoodPage(req,res) {
+        res.render('food/createFoodPage.ejs');
     }
 
     static async create(req,res) {
@@ -29,7 +30,8 @@ class FoodController {
             const foods = await food.create({
                 name, price, image
             })
-            res.json(foods);
+            // res.json(foods);
+            res.redirect('/foods')
         } 
         
         catch (err) {
@@ -45,10 +47,10 @@ class FoodController {
                 where: {id}
             })
 
-            deleteFood === 1 ? 
-            res.json(`food with id ${id} has been deleted`) : 
-            res.json(`Something is wrong!`);
-
+            // deleteFood === 1 ? 
+            // res.json(`food with id ${id} has been deleted`) : 
+            // res.json(`Something is wrong!`);
+            res.redirect('/foods')
         }
 
         catch (err) {
@@ -56,7 +58,23 @@ class FoodController {
         }
     }
 
-    static editFoodPage(req, res) {
+    static async editFoodPage(req, res) {
+        try {
+            const findId = +req.params.id;
+            const infoFood = await food.findOne({
+                where : {
+                    id: findId
+                }
+            })
+            res.render('food/editFoodPage.ejs', {food : infoFood});    
+            // infoFood === null ?
+            // res.json(`can't find food with id ${findId}`) :
+            // res.json(infoFood);
+        }
+
+        catch (err) {
+            res.json(err);
+        }     
 
     }
 
@@ -71,9 +89,10 @@ class FoodController {
                 where: {id}
             })
 
-            editedFood[0] === 1 ?
-            res.json({message : `Food with id ${id} has been updated`}) : 
-            res.json(`Something is wrong!`);
+            // editedFood[0] === 1 ?
+            // res.json({message : `Food with id ${id} has been updated`}) : 
+            // res.json(`Something is wrong!`);
+            res.redirect('/foods')
         }   
 
         catch (err) {

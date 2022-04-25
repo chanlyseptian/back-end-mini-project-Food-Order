@@ -17,8 +17,8 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/sb-admin-2.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/sb-admin-2.css"/>
     
     <title>Food Order</title>
   </head>
@@ -101,65 +101,43 @@
                 <a class="nav-link fw-bold" href="#">Customer Page</a>
                 <a class="nav-link fw-bold" href="#">   </a>
                 <a class="navbar-brand fw-bold" href="">
-                    <img src="../images/food.png" alt="" width = "70px"> Food Order
+                    <img src="/images/food.png" alt="" width = "70px"> Food Order
                 </a>             
             </div>
         </div>
     </nav>
     <!-- End of Navbar -->
-    
-    <!-- Tables -->
+
+    <!-- Add Food -->
     <div class="container ">
-        <h1 class="text-center text-danger p-4 fw-bold d-flex justify-content-center">Food List</h1>
-        <div class="addFood mx-5 text-left px-3 m-2">
-            <a href="/foods/create" type="button" class="btn btn-warning btn-sm btn-rounded mx-5 text-white shadow-sm fw-bold"><i class="fa-solid fa-circle-plus"></i>
-            Add Food
-            </a>
+        <h1 class="text-center text-danger p-4 fw-bold d-flex justify-content-center">Edit Food</h1>
+
+        <div class="mx-5 px-5">
+
+            <div class="mx-5 px-5">
+                <form action="/foods/edit/<%= food.id %>" method="post">
+                    <div class="form-group mb-3">
+                        <label for="formGroupExampleInput">Name</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Food Name" name="name" value="<%= food.name %>">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="formGroupExampleInput2">Price</label>
+                        <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Food Price" name="price" value="<%= food.price %>">
+                    </div>
+                    <div>
+                        <label class="form-label" for="image"><%= food.image %></label>
+                        <input type="file" class="form-control hidden" id="image" name="image"/>
+                    </div>
+                    <div class="mt-3">
+                        <a href="/foods" class="btn bg-secondary bg-opacity-50 shadow-sm text-white" type="submit"><i class="fa-solid fa-circle-left"></i> Back</a>
+                        <button class="btn btn-warning fw-bold text-white shadow-sm" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <table class="table align-middle mb-0 bg-white tbl text-center">
-            <thead class="bg-light bg-opacity-50">
-                <tr>
-                    <th>Food ID</th>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% foods.forEach(food => { %>
-                <tr>
-                    <td>
-                        <p class="fw-normal pt-4"><%= food.id %> </p>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <img src="../images/<%= food.image%>" style="width: 100px; height: 100px" class="rounded-circle" alt="image not found"/>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal pt-4"><%= food.name %></p>
-                    </td>
-                    <td>
-                        <p class="fw-normal pt-4">Rp.
-                        <%= food.price %>
-                         
-                        </p>
-                    </td>
-                    <td>
-                        <a href="/foods/edit/<%=food.id%>" type="button" class="btn btn-success btn-sm btn-rounded mt-4 shadow-sm">
-                        Edit
-                        </a>
-                         <a href="/foods/delete/<%=food.id%>" type="button" class="btn btn-danger btn-sm btn-rounded mt-4 shadow-sm">
-                        Delete
-                        </a>
-                    </td>
-                </tr>
-              <% }) %>
-            </tbody>
-        </table>
+        
     </div>
-    <!-- End of Tables -->
+    <!-- End of Add Food -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
