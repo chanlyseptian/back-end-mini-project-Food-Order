@@ -96,3 +96,8 @@ body {
 
 
 /* End of Admin Page */
+
+.tbl {
+  margin: 0 120px;
+  padding: 0.5rem;
+}

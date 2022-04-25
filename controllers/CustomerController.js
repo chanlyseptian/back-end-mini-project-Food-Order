@@ -9,7 +9,9 @@ class CustomerController {
                 ]
             });
 
-            res.json(customers);
+            // res.json(customers);
+            // res.render('customer/listCustomer.ejs', {customers})
+            res.render('customer/listCustomer.ejs')
 
         } catch (err) {
             res.json(err);

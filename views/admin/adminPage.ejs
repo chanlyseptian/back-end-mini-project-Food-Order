@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/sb-admin-2.css"/>
     
-    <title>Food Order</title>
+    <title>Admin</title>
   </head>
 <body>
     <!-- Page Wrapper -->
@@ -30,7 +30,7 @@
         <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin">
                 <div class="sidebar-brand-icon ">
                     <!-- <i class="fa-solid fa-user-plus"></i> -->
                     <i class="fa-solid fa-user-lock"></i>
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin">
                     <i class="fa-solid fa-file-circle-check"></i>
                     <span>Orders</span></a>
             </li>
@@ -58,7 +58,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#"  data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="/foods"  data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-utensils"></i>
                     <span>Foods</span>
@@ -67,7 +67,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#"  data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="/customers"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fa-solid fa-people-roof"></i>
                     <span>Customers</span>
@@ -100,7 +100,7 @@
                 <a class="nav-link active fw-bold" aria-current="page" href="#">Home</a>
                 <a class="nav-link fw-bold" href="#">Customer Page</a>
                 <a class="nav-link fw-bold" href="#">   </a>
-                <a class="navbar-brand fw-bold" href="/">
+                <a class="navbar-brand fw-bold" href="">
                     <img src="../images/food.png" alt="" width = "70px"> Food Order
                 </a>             
             </div>
@@ -109,9 +109,9 @@
     <!-- End of Navbar -->
     
     <!-- Tables -->
-    <div class="container">
-        <h1 class="text-center text-danger p-4 fw-bold">Order List</h1>
-        <table class="table align-middle mb-0 bg-white">
+    <div class="container ">
+        <h1 class="text-center text-danger p-4 fw-bold d-flex justify-content-center">Order List</h1>
+        <table class="table align-middle mb-0 bg-white tbl">
             <thead class="bg-light">
                 <tr>
                 <th>Name</th>
@@ -125,16 +125,16 @@
                 <tr>
                 <td>
                     <div class="d-flex align-items-center">
-                    <img
-                        src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                        alt=""
-                        style="width: 45px; height: 45px"
-                        class="rounded-circle"
-                        />
-                    <div class="ms-3">
-                        <p class="fw-bold mb-1">John Doe</p>
-                        <p class="text-muted mb-0">john.doe@gmail.com</p>
-                    </div>
+                        <img
+                            src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                            alt=""
+                            style="width: 45px; height: 45px"
+                            class="rounded-circle"
+                            />
+                        <div class="ms-3">
+                            <p class="fw-bold mb-1">John Doe</p>
+                            <p class="text-muted mb-0">john.doe@gmail.com</p>
+                        </div>
                     </div>
                 </td>
                 <td>

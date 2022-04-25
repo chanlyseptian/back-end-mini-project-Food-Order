@@ -9,7 +9,10 @@ class FoodController {
                 ]
             });
 
-            res.json(foods);
+            // res.json(foods);
+            // res.render('food/listFood.ejs', {foods})
+            res.render('food/listFood.ejs')
+
 
         } catch (err) {
             res.json(err);
