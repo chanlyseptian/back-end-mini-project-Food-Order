@@ -133,8 +133,8 @@
                         <input type="text" class="form-control p-4" id="formGroupExampleInput2" name="address" value="<%= customer.address %>">
                     </div>
                     <div>
-                        <label class="form-label" for="image">Image</label>
-                        <input type="file" class="form-control" id="image" name="image" disabled/>
+                        <label class="form-label" for="image">Image<span class="text-danger"> ( *must choose file! ) </span></label>
+                        <input type="file" class="form-control" id="image" name="image" />
                     </div>
                     <div class="mt-3">
                         <a href="/customers" class="btn bg-secondary bg-opacity-50 shadow-sm text-white" type="submit"><i class="fa-solid fa-circle-left"></i> Back</a>
