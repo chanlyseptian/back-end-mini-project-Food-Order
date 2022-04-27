@@ -106,7 +106,9 @@ class CustomerController {
                     id: findCustomerid,
                 }
             })
-            res.json(infoCustomer)
+            // res.json(infoCustomer)
+            res.redirect(`/customers/customerPage?name=${infoCustomer.name}&key=${infoCustomer.key}`);
+            
         }
 
         catch (err) {

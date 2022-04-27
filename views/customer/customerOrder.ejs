@@ -1,7 +1,9 @@
 <%- include('headerOrderPage') %>
 
 <div class="container">
-    <h1 class="text-center text-warning fw-bold m-5">Welcome, <%= orders[0].customer.name %> </strong> !
+    <% if(orders.length !== 0)  { %>
+
+    <h1 class="text-center text-warning fw-bold m-5">Order Information Page
     </h1>
     <div class="card text-center mt-4">
         <div class="card-header">
@@ -88,4 +90,48 @@
 
         </div>
     </div>
+    <%} else { %>
+        <h1 class="text-center text-warning fw-bold m-5">Order Page</h1>
+        <div class="card text-center mt-4">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="">Order Food</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Order Status</a>
+            </li>
+            </ul>
+        </div>
+        <div class="card-body bg-light">
+            <h3 class="text-muted mb-4">Order is Empty</h2>
+            
+            <div class="container">
+                <table class="table">
+                <thead class="bg-light">
+                    <tr>
+                    <th class="text-center">Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Food Name</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th class="text-center">Updated At</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+                    </tr>
+                </thead>
+
+                    </tr>
+            </table>
+            </div>
+
+
+        </div>
+    </div>
+    <%}%> 
+
 </div>

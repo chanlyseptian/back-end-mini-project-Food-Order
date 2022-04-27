@@ -97,7 +97,7 @@ class OrderController {
                     ['updatedAt', 'desc']
                 ]
             })
-
+            
             // infoOrder === null ?
             // res.json(`can't find order with id ${findId}`) :
             // res.json(infoOrder);
@@ -159,6 +159,7 @@ class OrderController {
     static async orderFood(req, res) {
         
         const id = +req.params.id;
+        
         res.render('customer/customerOrderFood.ejs', {id});
     }
 }

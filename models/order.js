@@ -1,4 +1,5 @@
 'use strict';
+const res = require('express/lib/response');
 const {
   Model
 } = require('sequelize');
@@ -16,9 +17,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   order.init({
-    status: DataTypes.STRING,
-    customerId: DataTypes.INTEGER,
-    foodId: DataTypes.INTEGER
+    status: {
+      allowNull: false,
+      type: DataTypes.STRING
+    },
+    customerId: {
+      allowNull: false,
+      type: DataTypes.INTEGER
+    },
+    foodId: {
+      allowNull: false,
+      notNull: false,
+      type: DataTypes.INTEGER,
+      validate: {
+        customValidator(value) {
+          if (value === null) {
+            throw new Error("Wrong food id");
+          }
+        }        
+      }
+    }
   }, {
     sequelize,
     modelName: 'order',
