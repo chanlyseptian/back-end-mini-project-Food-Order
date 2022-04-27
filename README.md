@@ -91,3 +91,149 @@ Day 3 :
 -	EJS
 
 -	CSS Framework (optional)
+
+
+# API DOCUMENTATION :
+
+### Home Page
+
+`GET /index`
+
+    http://localhost:3000/
+
++ Halaman menu dan akan menampilkan list food
+
+### Customer Page
+
+`GET /customers`
+
+    http://localhost:3000/customers
+
++ Halaman admin dan akan menampilkan list customer
+
+`GET /customers/login`
+
+    http://localhost:3000/customers/login
+
++ Halaman customer dan akan menampilkan form login customer
+
+`GET /customers/register`
+
+    http://localhost:3000/customers/register
+
++ Halaman customer dan akan menampilkan form register customer
+
+`POST /customers/register`
+
+    http://localhost:3000/customers/register
+
++ Untuk membuat akun customer
+
+`GET /customers/customerPage`
+
+    http://localhost:3000/customers/customerPage?name='...'&key='...'
+
++ Halaman untuk menampilkan informasi user 
+
+`GET /customers/editPage`
+
+    http://localhost:3000/customers/editPage/:id
+
++ Halaman untuk menampilkan form edit user 
+
+`POST /customers/editPage`
+
+    http://localhost:3000/customers/editPage/:id
+
++ Halaman mengupdate informasi user 
+
+`GET /customers/delete`
+
+    http://localhost:3000/customers/delete/:id
+
++ Untuk menghapus customer
+
+
+### Order Page
+
+`GET /orders/`
+
+    http://localhost:3000/orders/
+
++ Halaman untuk menampilkan list order di admin page
+
+`GET /orders/order`
+
+    http://localhost:3000/orders/order/:id
+
++ Halaman menampilkan form order food di customer page
+
+`POST /orders/create`
+
+    http://localhost:3000/orders/create
+
++ Untuk membuat order
+
+`GET /orders/information`
+
+    http://localhost:3000/orders/information/:id
+
++ Halaman menampilkan list order untuk di customer page
+
+`GET /orders/deleteOrder`
+
+    http://localhost:3000/orders/delete/:id
+
++ Untuk menghapus order
+
+`GET /orders/edit`
+
+    http://localhost:3000/orders/edit/:id
+
++ Halaman menampilkan form edit order di admin page 
+
+`POST /orders/edit`
+
+    http://localhost:3000/orders/edit/:id
+
++ Untuk mengupdate status order
+
+### Food Page
+
+`GET /foods/`
+
+    http://localhost:3000/foods/
+
++ Halaman untuk menampilkan list food di admin page
+
+`GET /foods/create`
+
+    http://localhost:3000/foods/create
+
++ Halaman untuk menampilkan form create food di admin page
+
+`POST /foods/create`
+
+    http://localhost:3000/foods/create
+
++ Untuk membuat food
+
+`GET /foods/delete`
+
+    http://localhost:3000/foods/delete/:id
+
++ Untuk menghapus food
+
+
+`GET /foods/edit`
+
+    http://localhost:3000/foods/edit/:id
+
++ Untuk menampilkan halaman edit food di admin page
+
+`POST /foods/edit`
+
+    http://localhost:3000/foods/edit/:id
+
++ Untuk mengupdate food
+
