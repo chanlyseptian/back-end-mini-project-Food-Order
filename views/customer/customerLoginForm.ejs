@@ -1,0 +1,55 @@
+<%- include('./header') %>
+
+<div class="container">
+    <!-- <div class="container text-center text-danger">
+        <h1>Login Customer</h1>
+    </div> -->
+
+    <section class="intro m-5">
+    <div class="mask d-flex align-items-center ">
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card" style="border-radius: 1rem;">
+                <div class="card-body text-center">
+
+                <div class="my-md-5 ">
+                        <h1 class="fw-bold text-warning">Welcome!</h1>
+                        <i class="fas fa-user fa-2x text-warning mb-5"></i>
+                        
+                    <form action="/customers/customerPage" method="get">
+
+                        <div class="form-outline ">
+                            <label class="form-label" for="name">Username</label>
+                            <input type="text" id="name" class="form-control form-control-lg" name="name"/>
+                        </div>
+
+                        <div class="form-outline ">
+                            <label class="form-label" for="name">Password</label>
+                            <input type="password" id="name" class="form-control form-control-lg" name="key"/>
+                        </div>
+
+                        <div class="mt-3 text-center">
+                            <button class="btn btn-warning fw-bold text-white btn-md shadow-sm" type="submit">Sign In</button>
+                            <!-- <input type="submit" value="Submit" class="btn btn-warning fw-bold text-white btn-md shadow-sm"> -->
+                        </div>
+                    </form>
+
+                </div>
+
+                <div>
+                    <p class="mb-1">Don't have account ? 
+                        <a href="/customers/register" class="fw-bold text-warning">Create Account</a>
+                    </p>
+                </div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+</div>
+    
+

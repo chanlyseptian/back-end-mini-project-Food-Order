@@ -103,7 +103,17 @@ body {
 }
 
 /* custt */
-.custImg {
+/* .custImg {
   margin-left: 55px;
+} */
+
+/* customer page */
+/* .intro {
+  height: 50%;
 }
 
+@media (min-height: 300px) and (max-height: 450px) {
+  .intro {
+    height: auto;
+  }
+} */

@@ -1,0 +1,42 @@
+<%- include('headerCustomerPage') %>
+
+<div class="container">
+    <h1 class="text-center text-warning fw-bold m-5">Welcome, <strong><%= customer.name%></strong> !
+    </h1>
+    <div class="card text-center mt-4">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Profile</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="/orders/order/<%=customer.id%>">Order Food</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="/orders/information/<%=customer.id%>">Order Status</a>
+            </li>
+            </ul>
+        </div>
+        <div class="card-body bg-light">
+            <h3 class="text-muted mb-4">User Information</h2>
+            <img src="../images/<%= customer.image%>"
+            alt="image not found"
+            style="width: 160px; height: 155px"
+            class="rounded-circle shadow-lg mb-2"
+            />
+            <div class="m-3 text-secondary">
+                <h5>ID : <strong><%= customer.id%></strong></h5>
+                <h5>Name : <strong><%= customer.name%></strong></h5>
+                <h5>Phone Number : <strong><%= customer.phone%></strong></h5>
+                <h5>Address : <strong><%= customer.address%></strong></h5>
+            </div>
+            
+            <!-- <a href="#" class="btn btn-warning text-white shadow-lg">Edit Data</a> -->
+            <a href="/customers/editPage/<%=customer.id%>" type="button" class="btn btn-warning text-white shadow-lg">
+            Edit Data
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,19 @@
 const route = require('express').Router();
+const { customer, food, order } = require('../models');
+
 
 route.get('/', (req, res) => {
-    // res.json({
-    //     message : `Food Order Management System`
-    // })
-    res.render('index.ejs')
+
+    food.findAll({
+        order: [
+            ['id', 'asc']
+        ]
+    })
+    .then(result=> {
+        res.render('index.ejs', {foods : result})
+    })
+    .catch(err => res.send(err));
+
 })
 
 const customerRoutes = require('./customer');

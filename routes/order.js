@@ -14,4 +14,8 @@ orderRoute.post('/edit/:id', OrderController.edit);
 
 orderRoute.get('/information/:id', OrderController.information);
 
+orderRoute.get('/order/:id', OrderController.orderFood);
+
+orderRoute.get('/deleteOrder/:id', OrderController.deleteOrder);
+
 module.exports = orderRoute;

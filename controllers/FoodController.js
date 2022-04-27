@@ -8,7 +8,7 @@ class FoodController {
                     ['id', 'asc']
                 ]
             });
-
+            // console.log(foods);
             // res.json(foods);
             res.render('food/listFood.ejs', {foods})
             // res.render('food/listFood.ejs')
@@ -45,6 +45,10 @@ class FoodController {
 
             const deleteFood = await food.destroy({
                 where: {id}
+            })
+
+            const deleteOrder = await order.destroy({
+                where: {foodId: id}
             })
 
             // deleteFood === 1 ? 

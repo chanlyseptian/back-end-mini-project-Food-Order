@@ -4,13 +4,18 @@ class OrderController {
     static async getOrders(req, res) {
         try {
             const orders = await order.findAll({
+                // attributes: {
+                //     include: ['id']
+                // },
                 include: [customer, food],
                 order: [
                     ['id', 'asc']
                 ]
             });
 
+            // console.log(orders);
             res.json(orders);
+            // res.render('admin/adminPage.ejs', {orders: orders})
 
         } catch (err) {
             res.json(err);
@@ -24,11 +29,12 @@ class OrderController {
         try {
             const { customerId, foodId, status } = req.body;
             const orders = await order.create({
-                customerId: +customerId ,
+                customerId: +customerId,
                 foodId: +foodId, 
-                status
+                status: 'pending'
             })
-            res.json(orders);
+            // res.json(orders);
+            res.redirect(`/orders/information/${customerId}`)
         } 
         
         catch (err) {
@@ -36,7 +42,21 @@ class OrderController {
         }
     }
 
-    static editOrderPage(req, res) {
+    static async editOrderPage(req, res) {
+        try {
+            const findId = +req.params.id;
+            const infoOrder = await order.findOne({
+                where : {
+                    id: findId
+                }, 
+                include: [customer, food]
+            })
+            res.render('admin/editOrder.ejs', { order: infoOrder });
+        }
+
+        catch (err) {
+            res.json(err);
+        }
 
     }
 
@@ -54,6 +74,7 @@ class OrderController {
             editOrderStatus[0] === 1 ? 
             res.json(`Order with id ${id} has been updated`) :
             res.json(`Something is wrong!`)
+            // res.redirect('/admin')
         }
 
         catch (err) {
@@ -64,15 +85,23 @@ class OrderController {
     static async information(req, res) {
         try {
             const findId = +req.params.id;
-            const infoOrder = await order.findOne({
+            const infoOrder = await order.findAll({
                 where : {
-                    id: findId
-                }
+                    customerId: findId
+                },
+                include: [customer, food],
+                attributes: {
+                    include: ['id']
+                },
+                order: [
+                    ['updatedAt', 'desc']
+                ]
             })
 
-            infoOrder === null ?
-            res.json(`can't find order with id ${findId}`) :
-            res.json(infoOrder);
+            // infoOrder === null ?
+            // res.json(`can't find order with id ${findId}`) :
+            // res.json(infoOrder);
+            res.render('customer/customerOrder.ejs', {orders : infoOrder})
         }
 
         catch (err) {
@@ -89,14 +118,48 @@ class OrderController {
                     id: findId
                 }
             })
-            deleteOrder === 1 ?
-            res.json(`Order with id ${findId} has been deleted`) :
-            res.json(`Something is wrong!`)
+            // deleteOrder === 1 ?
+            // res.json(`Order with id ${findId} has been deleted`) :
+            // res.json(`Something is wrong!`)
+            res.redirect('/admin')
         }
 
         catch (err) {
             res.json(err);
         }
+    }
+
+    static async deleteOrder(req, res) {
+        try {
+            
+            const findId = +req.params.id;
+            const infoOrder = await order.findOne({
+                where : {
+                    id: findId
+                },
+                include: [customer, food]
+            })
+         
+            const deleteOrder = await order.destroy({
+                where : {
+                    id: findId
+                }
+            })
+            // deleteOrder === 1 ?
+            // res.json(`Order with id ${findId} has been deleted`) :
+            // res.json(`Something is wrong!`)
+            res.redirect(`/orders/information/${infoOrder.customer.id}`)
+        }
+
+        catch (err) {
+            res.json(err);
+        }
+    }
+
+    static async orderFood(req, res) {
+        
+        const id = +req.params.id;
+        res.render('customer/customerOrderFood.ejs', {id});
     }
 }
 

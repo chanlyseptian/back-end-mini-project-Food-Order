@@ -1,0 +1,91 @@
+<%- include('headerOrderPage') %>
+
+<div class="container">
+    <h1 class="text-center text-warning fw-bold m-5">Welcome, <%= orders[0].customer.name %> </strong> !
+    </h1>
+    <div class="card text-center mt-4">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="/customers/customerPage?name=<%= orders[0].customer.name %>&key=<%= orders[0].customer.key %>">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="/orders/order/<%= orders[0].customer.id%>">Order Food</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Order Status</a>
+            </li>
+            </ul>
+        </div>
+        <div class="card-body bg-light">
+            <h3 class="text-muted mb-4">Order Status</h2>
+            
+            <div class="container">
+                <table class="table">
+                <thead class="bg-light">
+                    <tr>
+                    <th class="text-center">Order ID</th>
+                    <th>Customer Name</th>
+                    <th>Food Name</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th class="text-center">Updated At</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <% orders.forEach(order => { %>
+                    <tr>
+                        <td>
+                            <% order.id = Number(order.id) %>
+                            <p class="fw-normal mb-1 text-center"><%= order.id %> </p>
+                        </td>
+                        <td>
+                            <div class="">
+                                <p class="fw-bold mb-1 text-center"><%= order.customer.name %></p>
+                            </div>
+                        </td>
+                        <td><%= order.food.name %></td>
+                        <td><%= order.customer.phone %></td>
+                        <td><%= order.customer.address %></td>
+                        <td class="text-center"><%= `${order.updatedAt.getFullYear()}-${order.updatedAt.getMonth()+1}-${order.updatedAt.getDate()} | ${order.updatedAt.getHours()} : ${order.updatedAt.getMinutes()} : ${order.updatedAt.getSeconds()}` %></td>
+
+                        <td>
+                            
+
+                            <% if(order.status === 'delivered') { %>
+                                <span class="text-white p-1 fw-bold btn-sm btn-success text-decoration-none"><%= order.status %></span>     
+                            <% } else if(order.status === 'on delivery') { %>
+                                <span class="text-white p-1 fw-bold btn-sm btn-primary text-decoration-none"><%= order.status %></span>   
+                            <% } else if(order.status === 'pending') { %>
+                                <span class="text-white p-1 fw-bold btn-sm btn-warning text-decoration-none"><%= order.status %></span>
+                            <% } else if(order.status === 'canceled') { %>
+                                <span class="text-white p-1 fw-bold btn-sm btn-danger text-decoration-none"><%= order.status %></span>   
+                            <% } else if(order.status === 'is cooking') { %>
+                                <span class="text-white p-1 fw-bold btn-sm btn-info text-decoration-none"><%= order.status %></span>    
+                            <% } %>
+                        
+                        </td>
+                        <td>
+                            
+                            <% if(order.status === 'delivered') { %>
+                                <i class="fa-solid fa-circle-check text-success"></i>
+                            <% } else if(order.status === 'canceled'){ %>
+                                <a href="/orders/deleteOrder/<%= order.id %>" class="btn btn-sm btn-danger " type="submit"><i class="fa-solid fa-trash-can"></i></i> Delete </a>   
+                            <% } else { %>
+                                <a href="/orders/deleteOrder/<%= order.id %>" class="btn btn-sm btn-danger " type="submit"><i class="fa-solid fa-circle-xmark"></i> Cancel </a>     
+                            <% } %>
+                        </td>
+                    
+                    </tr>
+                    <% }) %> 
+                </tbody>
+            </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>

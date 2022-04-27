@@ -116,12 +116,12 @@
             Add Customer
             </a>
         </div>
-        <table class="table align-middle mb-0 bg-white tbl text-center">
+        <table class="table align-middle mb-0 bg-white tbl">
             <thead class="bg-light bg-opacity-50">
                 <tr>
-                    <th>Customer ID</th>
+                    <th class="text-center">Customer ID</th>
                     <th>Customer Name</th>
-                    <th>Customer Key</th>
+                    <!-- <th>Customer Key</th> -->
                     <th>Phone Number</th>
                     <th>Address</th>
                     <th>Actions</th>
@@ -131,7 +131,7 @@
                 <% customers.forEach(customer => { %>
                 <tr>
                     <td>
-                        <p class="fw-normal pt-4"><%= customer.id %> </p>
+                        <p class="fw-normal pt-4 text-center"><%= customer.id %> </p>
                     </td>
                     
                     <td>
@@ -139,7 +139,7 @@
                             <img
                                 src="../images/<%= customer.image%>"
                                 alt="image not found"
-                                style="width: 65px; height: 65px"
+                                style="width: 55px; height: 55px"
                                 class="rounded-circle"
                                 />
                             <div class="ms-3">
@@ -149,10 +149,10 @@
                     </td>            
 
 
-                    <td>
-                        <p class="fw-normal pt-4"><%= customer.key %>
+                    <!-- <td>
+                        <p class="fw-normal pt-4 px-4"><%= customer.key %>
                         </p>
-                    </td>
+                    </td> -->
                     <td>
                         <p class="fw-normal pt-4"><%= customer.phone %></p>
                     </td>
