@@ -1,9 +1,9 @@
 ## TUGAS BACK-END MINI PROJECT - BOOTCAMP FULLSTACK NODE JS CODE.ID
 
-> _⏰_ START : 21 APRIL 2022 || DEADLINE : 28 APRIL 2022 - 23.59.59 WIB
+> _⏰_ START : **~21 APRIL 2022 || DEADLINE : 28 APRIL 2022 - 23.59.59 WIB~** *FINISHED*
 
 
-## TASK SUMMARY
+### TASK SUMMARY
 
 Buatlah sebuah aplikasi yang memiliki relasi database Many To Many. Tema bebas dapat dipilih sesuai masing-masing. Misal : Toko Buku, Toy Store, dll.
 Presentasi kan hasil kerja kalian pada hari Kamis. Berikut adalah topik yang harus kalian buat :
@@ -19,81 +19,72 @@ d.	Endpoint yang diperlukan / API Document
 e.	Demo apps  
 
 
-## REQUIREMENT
+### REQUIREMENT
 
-1.	Technology Stack
-
--	Node.js
-
--	Express
-
--	Postgres (DBMS)
-
--	Many To Many 
-
--	Sequelize (ORM)
-
--	Basic Query / CRUD (WAJIB)
-
--	Validations
-
--	Hooks
-
--	EJS (Template Engne)
-
--	CSS framework boleh menggunakan Bootstrap
+1.	Technology Stack : 
+-   Node.js, Express, Postgres (DBMS), Many To Many, Sequelize (ORM), Basic Query / CRUD (WAJIB), Validations, Hooks, EJS (Template Engne), CSS framework boleh menggunakan Bootstrap
 
 2.	Entity Relational Diagram / ERD (WAJIB!!)
-
--	Sertakan diagram relasi dan alurnya
+-   Sertakan diagram relasi dan alurnya
 
 3.	API Documentation (WAJIB!!)
-
--	Dapat dibuat secara manual dalam README.md di github
-
--	Bisa menggunakan Swagger
+-   Dapat dibuat secara manual dalam README.md di github, Bisa menggunakan Swagger
 
 4.	Upload to cloud with Heroku
 
 5.	File ppt dengan format : BE-[nama_apps]-[nama]
 
 
-## SPRINT PLANNING :
+### SPRINT PLANNING :
 
-Day 1 :
+Day 1 : Cari tema, Analisis table / menemukan relasi, Buat ERD, Buat folder dan init apps, Create dan migrate db
 
--	Cari tema
+Day 2 : App.js, Routes, Controller, Testing di postman, Dst
 
--	Analisis table / menemukan relasi
-
--	Buat ERD
-
--	Buat folder dan init apps 
-
--	Create dan migrate db
-
-Day 2 :
-
--	App.js
-
--	Routes
-
--	Controller
-
--	Testing di postman
-
--	Dst
-
-Day 3 :
-
--	API Documentation
-
--	EJS
-
--	CSS Framework (optional)
+Day 3 : API Documentation, EJS, CSS Framework (optional)
 
 
-# API DOCUMENTATION :
+# ASSIGNMENT RESULTS :
+
+## ERD
++ Many to Many Relationship
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/ERD_Food_Order.png)
+
+### POWERPOINT : https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/PPT%20-%20Food%20Order.pptx
+## SCREENSHOOTS APPS : https://github.com/chanlyseptian/back-end-mini-project-Food-Order/tree/main/Screenshoot%20Application%20Food%20Order
+### 1. Home
++ a. Home Page
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/1a.%20Home%20Page.png)
++ b. Home Page - Menu List
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/1.b%20Home%20Page%20-%20Menu%20list%20Food.png)
+### 2. Customer Page
++ a. Customer Page - Login
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/2a.%20Customer%20Page%20-%20Login.png)
++ b. Customer Page - Register
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/2b.%20Customer%20Page%20-%20Register.png)
++ c. Customer Page - Profil Information Page
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/2c.%20Customer%20Page%20-%20Profil%20Information%20Page.png)
++ d. Customer Page - Edit Information User Page
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/2d.%20Customer%20Page%20-%20Edit%20Information%20User%20Page.png)
++ e. Customer Page - Order Food for Customer Page
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/2e.%20Customer%20Page%20-%20Order%20Food%20for%20Customer%20Page.png)
++ f. Customer Page - Order Status Customer Page
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/2f.%20Customer%20Page%20-%20Order%20Status%20Customer%20Page.png)
+### 3. Admin Page
++ a. Admin Page - Orders Management
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/3a.%20Admin%20Page%20-%20Orders%20Management.png)
++ b. Admin Page - Edit Order status
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/3b.%20Admin%20Page%20-%20Edit%20Order%20status.png)
++ c. Admin Page - Food Management
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/3c.%20Admin%20Page%20-%20Food%20Management%20.png)
++ d. Admin Page - Edit Food
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/3d.%20Admin%20Page%20-%20Edit%20Food.png)
++ e. Admin Page - Add Food
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/3e.%20Admin%20Page%20-%20Add%20Food.png)
++ f. Admin Page - Show List Customer and can delete customer
+![textblob](https://github.com/chanlyseptian/back-end-mini-project-Food-Order/blob/main/Screenshoot%20Application%20Food%20Order/3f.%20Admin%20Page%20-%20Show%20List%20Customer%20and%20can%20delete%20customer.png)
+
+## API Documentation 
 
 ### Home Page
 
